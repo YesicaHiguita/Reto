@@ -20,7 +20,13 @@ public class CategoryController {
         return categoryService.getAll();
     }
 
+    @PostMapping("/all")
+    public Category saveAll(@RequestBody Category c){
+        return categoryService.save(c);
+    }
+
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Category save(@RequestBody Category c){
         return categoryService.save(c);
     }
